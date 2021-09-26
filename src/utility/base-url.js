@@ -1,0 +1,1 @@
+export const baseUrl = 'https://smurwafer.herokuapp.com/';
