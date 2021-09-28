@@ -80,19 +80,19 @@ function App() {
   }, [token, dispatch, id]);
 
 
-  useEffect(() => {
-    socket.on('join', ({ userName }) => {
-        notification.open({
-          message: userName + ' is online',
-        });
-    });
+  // useEffect(() => {
+  //   socket.on('join', ({ userName }) => {
+  //       notification.open({
+  //         message: userName + ' is online',
+  //       });
+  //   });
 
-    socket.on('leave', ({ userName, room }) => {
-        notification.open({
-          message: userName + ' went offline',
-        });
-    });
-  });
+  //   socket.on('leave', ({ userName, room }) => {
+  //       notification.open({
+  //         message: userName + ' went offline',
+  //       });
+  //   });
+  // });
 
   return (
     <div className={classes.App}>

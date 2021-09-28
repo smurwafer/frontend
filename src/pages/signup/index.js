@@ -111,7 +111,8 @@ const SignupPage = props => {
                 history.push('/');
             }).catch(err => {
                 setIsLoading(false);
-                message.error(err.response.data.message);
+                const errMsg = err.response && err.response.data ? err.response.data.message : "Cannot signup at the moment!";
+                message.error(errMsg);
             });
     }
 

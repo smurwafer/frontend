@@ -7,6 +7,7 @@ import { RedoOutlined } from '@ant-design/icons';
 import { Badge, message, notification,  } from 'antd';
 import { useHistory } from 'react-router';
 import socket from 'socket.io-client';
+import { mediaUrl } from '../../utility/media-url';
 
 const defaultProfile = process.env.PUBLIC_URL + '/images/profile/default_profile.jpg';
 
@@ -59,7 +60,7 @@ const Online = props => {
                         <Badge dot={true} color="#1894FF" offset={[0, 10]}>
                             <Cover>
                                 <Display>
-                                    <Photo src={currentUser.imageUrl ? baseUrl + currentUser.imageUrl : defaultProfile} alt={currentUser.userName} />
+                                    <Photo src={currentUser.imageUrl ? mediaUrl(currentUser.imageUrl) : defaultProfile} alt={currentUser.userName} />
                                 </Display>
                             </Cover>
                         </Badge>
@@ -81,7 +82,7 @@ const Online = props => {
                                         <Badge dot={true} status="success" offset={[0, 10]}>
                                             <Cover>
                                                 <Display>
-                                                    <Photo src={u.imageUrl ? baseUrl + u.imageUrl : defaultProfile} alt={u.userName} />
+                                                    <Photo src={u.imageUrl ? mediaUrl(u.imageUrl) : defaultProfile} alt={u.userName} />
                                                 </Display>
                                             </Cover>
                                         </Badge>

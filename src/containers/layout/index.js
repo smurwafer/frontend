@@ -76,15 +76,15 @@ const Layout = props => {
     };
 
 
-    useEffect(() => {
-        socket.on('entered', data => {
-            openJoinNotification(data.message);
-        });
+    // useEffect(() => {
+    //     socket.on('entered', data => {
+    //         openJoinNotification(data.message);
+    //     });
 
-        socket.on('result', ({ message }) => {
-            openNotification(message);
-        });
-    });
+    //     socket.on('result', ({ message }) => {
+    //         openNotification(message);
+    //     });
+    // });
 
     return (
         <Container>
