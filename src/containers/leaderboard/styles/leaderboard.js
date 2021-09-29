@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 export const Container = styled.div`
     margin-top: 20px;
     margin-right: 20px;
+    /* width: 100%; */
 `;
 
 export const Wrapper = styled.div`

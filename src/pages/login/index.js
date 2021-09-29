@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Input, Button, Checkbox, message } from 'antd';
-import { Container, Section, Form as Frm, Wrapper, Legend, Row, SwitchContainer, SwitchText, SwitchLink } from './styles/login';
+import { Container, Section, DisplaySection, Form as Frm, Wrapper, Legend, Row, SwitchContainer, SwitchText, SwitchLink } from './styles/login';
 import { EyeInvisibleOutlined, EyeTwoTone, LockOutlined, MailOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
 import * as actions from '../../store';
@@ -85,9 +85,9 @@ const LoginPage = props => {
     return (
         <Container>
             <Wrapper>
-                <Section>
+                <DisplaySection>
                     <GuestCarousel />
-                </Section>
+                </DisplaySection>
                 <Section>
                     <Frm onSubmit={login}>
                         <Legend>

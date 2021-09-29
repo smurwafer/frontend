@@ -11,7 +11,8 @@ export const Container = styled.div`
 export const Section = styled.div``;
 
 export const Left = styled.div`
-    width: 15%;
+    width: 16%;
+    min-width: 150px;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -28,11 +29,11 @@ export const Brand = styled.div`
 `;
 
 export const SearchSection = styled.div`
-    width: 65%;
+    width: 70%;
 `;
 
 export const Right = styled.div`
-    width: 20%;
+    width: 250px;
     display: flex;
     justify-content: center;
 `;

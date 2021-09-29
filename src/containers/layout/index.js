@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from '../navigation';
-import { Navbar, Sidebar as Side, Content, Container, Division, Section } from './styles/layout';
+import { Navbar, Sidebar as Side, Content, Container, Division, Section, Rightbar } from './styles/layout';
 import { Switch, useLocation } from 'react-router-dom';
 import HomePage from '../../pages/home';
 import LogoutPage from '../../pages/logout';
@@ -50,7 +50,7 @@ const Layout = props => {
 
     const openSidebar = () => {
         setOpen(true);
-        setX(17);
+        setX(15);
     }
 
     const closeSidebar = () => {
@@ -92,75 +92,73 @@ const Layout = props => {
                 <Navigation toggleSidebar={toggleSidebar} />
             </Navbar>
             <Division>
-                { open && <Section width={x}>
+                { open && 
                     <Side>
                         <Sidebar />
                     </Side>
-                </Section> }
-                <Section width={100 - 2 * x}>
-                    <Content>
-                        <Switch>
-                            <GuestRoute path={"/login"} exact>
-                                <LoginPage closeSidebar={closeSidebar} />
-                            </GuestRoute>
-                            <GuestRoute path={"/signup"} exact>
-                                <SignupPage closeSidebar={closeSidebar} />
-                            </GuestRoute>
-                            <AuthRoute path={"/create"} exact>
-                                <CreatePage closeSidebar={closeSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/profile"} exact>
-                                <ProfilePage openSidebar={openSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/profile-view/:id"} exact>
-                                <ProfileViewPage openSidebar={openSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/update-profile"} exact>
-                                <UpdateProfilePage closeSidebar={closeSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/live"} exact>
-                                <LivePage openSidebar={openSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/trending"} exact>
-                                <TrendingPage openSidebar={openSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/explore"} exact>
-                                <ExplorePage openSidebar={openSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/search/:type/:search"} exact>
-                                <SearchPage openSidebar={openSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/follow"} exact>
-                                <FollowPage openSidebar={openSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/bookmark"} exact>
-                                <BookmarkPage openSidebar={openSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/setting"} exact>
-                                <SettingPage openSidebar={openSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/report"} exact>
-                                <ReportPage openSidebar={openSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/logout"} exact>
-                                <LogoutPage />
-                            </AuthRoute>
-                            <AuthRoute path={"/story-detail/:id/:title"} exact>
-                                <StoryDetailPage closeSidebar={closeSidebar} />
-                            </AuthRoute>
-                            <AuthRoute path={"/"} exact>
-                                <HomePage openSidebar={openSidebar} />
-                            </AuthRoute>
-                            <GuestRoute>
-                                <NotFoundPage closeSidebar={closeSidebar} />
-                            </GuestRoute>
-                        </Switch>
-                    </Content>
-                </Section>
+                }
+                <Content>
+                    <Switch>
+                        <GuestRoute path={"/login"} exact>
+                            <LoginPage closeSidebar={closeSidebar} />
+                        </GuestRoute>
+                        <GuestRoute path={"/signup"} exact>
+                            <SignupPage closeSidebar={closeSidebar} />
+                        </GuestRoute>
+                        <AuthRoute path={"/create"} exact>
+                            <CreatePage closeSidebar={closeSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/profile"} exact>
+                            <ProfilePage openSidebar={openSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/profile-view/:id"} exact>
+                            <ProfileViewPage openSidebar={openSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/update-profile"} exact>
+                            <UpdateProfilePage closeSidebar={closeSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/live"} exact>
+                            <LivePage openSidebar={openSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/trending"} exact>
+                            <TrendingPage openSidebar={openSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/explore"} exact>
+                            <ExplorePage openSidebar={openSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/search/:type/:search"} exact>
+                            <SearchPage openSidebar={openSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/follow"} exact>
+                            <FollowPage openSidebar={openSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/bookmark"} exact>
+                            <BookmarkPage openSidebar={openSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/setting"} exact>
+                            <SettingPage openSidebar={openSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/report"} exact>
+                            <ReportPage openSidebar={openSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/logout"} exact>
+                            <LogoutPage />
+                        </AuthRoute>
+                        <AuthRoute path={"/story-detail/:id/:title"} exact>
+                            <StoryDetailPage closeSidebar={closeSidebar} />
+                        </AuthRoute>
+                        <AuthRoute path={"/"} exact>
+                            <HomePage openSidebar={openSidebar} />
+                        </AuthRoute>
+                        <GuestRoute>
+                            <NotFoundPage closeSidebar={closeSidebar} />
+                        </GuestRoute>
+                    </Switch>
+                </Content>
                 { open &&
-                    <Section width={x}>
+                    <Rightbar>
                         { location.pathname === "/" && <Leaderboard /> }
-                    </Section>
+                    </Rightbar>
                 }
             </Division>
             {/* <Footer /> */}

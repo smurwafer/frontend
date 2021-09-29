@@ -8,6 +8,13 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
     width: 80%;
     margin: auto;
+
+
+    @media (max-width: 520px) {
+        display: block;
+        width: 100%;
+        /* padding: 10px; */
+    }
 `;
 
 export const LoaderContainer = styled.div`

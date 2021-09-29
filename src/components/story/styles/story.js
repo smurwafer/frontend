@@ -8,7 +8,8 @@ export const Container = styled.div`
     margin-top: 20px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 
-    &:hover {
+    @media (max-width: 720px) {
+        height: 600px;
     }
 `;
 
@@ -18,10 +19,19 @@ export const Wrapper = styled.div`
     /* border: 0.2px solid #eee; */
     width: 100%;
     height: 100%;
+
+    @media (max-width: 720px) {
+        flex-direction: column;
+    }
 `;
 
 export const Section = styled.div`
     width: 50%;
+
+    @media (max-width: 720px) {
+        width: 100%;
+        height: 50%;
+    }
 `;
 
 export const Display = styled.div`
@@ -43,6 +53,11 @@ export const Info = styled.div`
     height: 100%;
 `;
 
+export const InfoSection = styled.div`
+    /* display: flex;
+    flex-direction: column; */
+`;
+
 export const TitleSection = styled.div`
     align-items: center;
     border-bottom: 0.1px solid #eee;
@@ -52,7 +67,13 @@ export const ContentSection = styled.div`
     height: 67%;
     padding: 10px 0px;
     border-bottom: 0.1px solid #eee;
-    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+
+    @media (max-width: 720px) {
+        height: 55%;
+    }
 `;
 
 export const TagSection = styled.div`
@@ -83,7 +104,8 @@ export const Title = styled.h2`
 `;
 
 export const Content = styled.p`
-    font-size: 16px;
+    font-size: 15px;
+    text-overflow: ellipsis;
 `;
 
 export const Tag = styled.p`

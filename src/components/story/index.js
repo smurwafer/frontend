@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from '../../axios-config';
 import { baseUrl } from '../../utility/base-url';
 import { Card, Divider, message, Skeleton, Tag, Typography } from 'antd';
-import { Container, Wrapper, Section, Display, Photo, Info, Content, Title, TitleSection, ContentSection, TagSection, ActionSection, ActionIcon, CounterContainer, CounterSection, CounterText, AuthorContainer, AuthorSection, AuthorDisplay, AuthorPhoto, AuthorText } from './styles/story';
+import { Container, Wrapper, Section, Display, Photo, Info, Content, Title, TitleSection, ContentSection, TagSection, ActionSection, ActionIcon, CounterContainer, CounterSection, CounterText, AuthorContainer, AuthorSection, AuthorDisplay, AuthorPhoto, AuthorText, InfoSection } from './styles/story';
 import { ArrowDownOutlined, ArrowUpOutlined, BookOutlined, ReadOutlined, ShareAltOutlined } from '@ant-design/icons';
 import { useCallback } from 'react';
 import { header } from '../../utility/header';
@@ -223,9 +223,11 @@ const Story = props => {
                                     }
                                 </TagSection>
                                 <ContentSection>
-                                    <Paragraph ellipsis={{ rows: 10, expandable: false }}>
+                                {/* <Paragraph ellipsis={{ rows: 10, expandable: false }}> */}
+                                    <Content>
                                         {text}
-                                    </Paragraph>
+                                    </Content>
+                                    {/* </Paragraph> */}
                                 </ContentSection>
                                 <ActionSection>
                                     <ActionIcon>

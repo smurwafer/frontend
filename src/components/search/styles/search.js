@@ -3,7 +3,11 @@ import styled from 'styled-components/macro';
 export const Container = styled.div`
     position: relative;
     width: 85%;
-    margin-left: 11.5%;
+    margin: auto;
+
+    @media (max-width: 600px) {
+        display: none;
+    }
 `;
 
 export const ResultContainer = styled.div`

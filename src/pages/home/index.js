@@ -24,8 +24,6 @@ const HomePage = props => {
         openSidebar();
     }, [openSidebar]);
 
-    // useEffect(() => {}, []);
-
     useEffect(() => {
         dispatch(actions.fetchStories(token))
             .then(result => {

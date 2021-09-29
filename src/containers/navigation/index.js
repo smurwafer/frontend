@@ -27,8 +27,8 @@ const Navigation = props => {
         <Container>
             <Left>
                 <div style={{ width: 10 }}></div>
-                <MenuOutlined onClick={props.toggleSidebar} color={"#1890FF"} />
-                <div style={{ width: 15 }}></div>
+                { isAuthenticated && <MenuOutlined onClick={props.toggleSidebar} color={"#1890FF"} /> }
+                { isAuthenticated && <div style={{ width: 15 }}></div> }
                 <Brand onClick={goToHome}>Smurwafer</Brand>
             </Left>
             <SearchSection>
@@ -65,6 +65,7 @@ const Navigation = props => {
                             Logout
                         </Nav>
                     </NavItem>
+                    <div style={{ width: 10 }} />
                 </Right>
             }
         </Container>

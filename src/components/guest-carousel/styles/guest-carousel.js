@@ -1,9 +1,13 @@
 import styled from 'styled-components/macro';
 
 export const Container = styled.div`
-    width: 100%;
+    /* width: 100%; */
     height: 400px;
     background-color: gray;
+
+    /* @media (max-width: 820px) {
+        display: none;
+    } */
 `;
 
 export const Display = styled.div`

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Input, InputNumber, Button, Checkbox, Upload, message } from 'antd';
-import { Container, Section, SwitchContainer, SwitchLink, SwitchText, Form as Frm, Wrapper, PageNavigator, ProfileContainer, ProfilePhoto, Legend, UploadText, HelperContainer, Helper, Row } from './styles/signup';
+import { Container, Section, DisplaySection, SwitchContainer, SwitchLink, SwitchText, Form as Frm, Wrapper, PageNavigator, ProfileContainer, ProfilePhoto, Legend, UploadText, HelperContainer, Helper, Row } from './styles/signup';
 import { EyeInvisibleOutlined, EyeTwoTone, LockOutlined, MailOutlined, UploadOutlined, UserOutlined } from '@ant-design/icons';
 import { userNameValidator, emailValidator, nameValidator, ageValidator, passwordValidator, passwordConfirmValidator } from '../../validators/auth/auth-validator';
 import { useDispatch } from 'react-redux';
@@ -257,9 +257,9 @@ const SignupPage = props => {
     return (
         <Container>
             <Wrapper>
-                <Section>
+                <DisplaySection>
                     <GuestCarousel />
-                </Section>
+                </DisplaySection>
                 <Section>
                     <Frm onSubmit={signup}>
                         {/* <Form

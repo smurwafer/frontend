@@ -13,13 +13,37 @@ export const Division = styled.div`
 `;
 
 export const Section = styled.div`
-    width: ${ ({ width }) =>  width + '%'};
+
 `;
 
 export const Navbar = styled.div``;
 
 export const Sidebar = styled.div`
+    width: 16%;
     height: 100%;
+
+    @media (max-width: 600px) {
+        width: 10%;
+    }
 `;
 
-export const Content = styled.div``;
+export const Content = styled.div`
+    width: 70%;
+    min-width: 500px;
+
+    @media (max-width: 1030px) {
+        width: 84%;
+    }
+
+    @media (max-width: 600px) {
+        width: 90%;
+    }
+`;
+
+export const Rightbar = styled.div`
+    width: 250px;
+
+    @media (max-width: 1030px) {
+        display: none;
+    }
+`;
